@@ -4,7 +4,7 @@ export function updateBars(state) {
   document.getElementById('bar-hp').style.width    = state.hp     + '%';
   document.getElementById('bar-sleep').style.width = state.sleep  + '%';
   document.getElementById('bar-mood').style.width= state.mood + '%';
-  document.getElementById('bar-money').style.width = (state.money / MAX_MONEY * 100) + '%';
+  document.getElementById('bar-money').style.width = (state.money / 999 * 100) + '%';
 }
 
 export function updateBarColors(state) {
