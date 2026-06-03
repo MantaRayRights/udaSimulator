@@ -11,6 +11,7 @@ const DECAY = {
 };
 
 export function udaLife(state, dt) {
+  console.log('active:', state.active);
   derivePassive(state);
   if (state.passive.sleepy && state.active === 'working') rates.money -= 0.01;
   if (state.passive.sad && state.active === 'working') rates.money -= 0.01;
@@ -33,7 +34,7 @@ export function udaLife(state, dt) {
     eventLogger("Uda died");}
 
   const rates = DECAY[state.active];
-  console.log('active:', state.active, 'rates:', rates);
+  //console.log('active:', state.active, 'rates:', rates);
   state.hp = clamp(state.hp + rates.hp * dt, 0, 100);
   state.sleep = clamp(state.sleep + rates.sleep * dt, 0, 100);
   state.mood = clamp(state.mood + rates.mood * dt, 0, 100);
