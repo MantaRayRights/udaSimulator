@@ -1,6 +1,6 @@
 import {events} from './events.js';
 import {eventLogger} from './ui.js';
-import {states} from './state.js';
+import {state} from './state.js';
 import {derivePassive} from './state.js';
 
 const DECAY = {
