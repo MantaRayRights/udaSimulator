@@ -1,0 +1,117 @@
+:root {
+  --color-bg: #7a474f;
+  --color-panel: #dfd6bb;
+  --color-border: #0f3460;
+  --color-text: #2f0e0e;
+
+  --bar-height: 18px;
+  --panel-padding: 16px;
+  --panel-gap: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: sans-serif;
+  height: 100vh;
+  overflow: hidden; /* no scrolling */
+}
+
+#game {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* relative sizes of the panels*/
+  grid-template-areas: "room bars log";
+  height: 100vh;
+  gap: var(--panel-gap);
+  padding: var(--panel-padding);
+}
+
+#panel-room {
+  grid-area: room;
+  position: relative;
+  border: 1px solid var(--color-border);
+  background: var(--color-panel);
+}
+
+#panel-bars {
+  grid-area: bars;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: var(--panel-padding);
+  border: 1px solid var(--color-border);
+  background: var(--color-panel);
+}
+
+#panel-log {
+  grid-area: log;
+  padding: var(--panel-padding);
+  border: 1px solid var(--color-border);
+  background: var(--color-panel);
+  overflow-y: auto; /* log scrolls independently */
+}
+
+#elf-sprite {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Clickable furnitures */
+#workButton {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 80px;
+}
+
+#eatButton {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+}
+
+#sleepButton {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+}
+
+#drinkButton {
+  position: absolute;
+  bottom: 120px;
+  left: 20px;
+  width: 80px;
+}
+
+#event-log p {
+  font-size: 13px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+#panel-log h2 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+#workButton, #eatButton, #sleepButton, #drinkButton {
+  cursor: pointer;
+}
+
+#sleepButton:hover, #eatButton:hover, #workButton:hover, #drinkButton:hover {
+  filter: brightness(1.2); /* slight glow on hover */
+}
