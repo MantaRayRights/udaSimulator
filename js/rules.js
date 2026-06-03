@@ -14,15 +14,10 @@ export function udaLife(state, dt) {
   if (state.passive.sleepy && state.active === 'working') rates.money -= 0.01;
   if (state.passive.sad && state.active === 'working') rates.money -= 0.01;
 
-  state.hp     = clamp(state.hp     + rates.hp     * dt, 0, 100);
-  state.sleep  = clamp(state.sleep  + rates.sleep  * dt, 0, 100);
-  state.mental = clamp(state.mental + rates.mental * dt, 0, 100);
-  state.money  = clamp(state.money  + rates.money  * dt, 0, 999);
-  
   if (state.active === 'eating' || state.active === 'drinking') {
     if (state.money <= 0) {
       state.active = 'idle';
-      // add popup "That costs a lot...""
+      // add popup "That costs a lot!"
       eventLogger("Uda couldn't afford to eat/drink");
     }
   }
@@ -35,6 +30,12 @@ export function udaLife(state, dt) {
   
   if (state.hp <= 0) state.active = 'dead';
     eventLogger("Uda died");
+
+  state.hp     = clamp(state.hp     + rates.hp     * dt, 0, 100);
+  state.sleep  = clamp(state.sleep  + rates.sleep  * dt, 0, 100);
+  state.mental = clamp(state.mental + rates.mental * dt, 0, 100);
+  state.money  = clamp(state.money  + rates.money  * dt, 0, 999);
+  
 }
 
 function clamp(val, min, max) {

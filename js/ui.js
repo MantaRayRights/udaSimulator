@@ -1,44 +1,41 @@
 // Updates the web page to reflect the current state.
 
-function updateBars(state) {
+export function updateBars(state) {
   document.getElementById('bar-hp').style.width    = state.hp     + '%';
   document.getElementById('bar-sleep').style.width = state.sleep  + '%';
-  document.getElementById('bar-mental').style.width= state.mental + '%';
+  document.getElementById('bar-mood').style.width= state.mood + '%';
   document.getElementById('bar-money').style.width = (state.money / MAX_MONEY * 100) + '%';
 }
 
-function updateBarColors(state) {
-  const sleepBar = document.getElementById('bar-sleep');
-  sleepBar.classList.toggle('bar--warning', state.passive.sleepy);
-  
-  const mentalBar = document.getElementById('bar-mental');
-  mentalBar.classList.toggle('bar--warning', state.passive.sad);
+export function updateBarColors(state) {
+  document.getElementById('bar-hp')
+  .classList.toggle('bar--warning', state.hp <= 30);
 }
 
 const SPRITE_MAP = {
-  'idle:normal':        'elf--idle-normal',
-  'idle:sleepy':        'elf--idle-sleepy',
-  'idle:sad':           'elf--idle-sad',
-  'idle:sleepy+sad':    'elf--idle-sleepy-sad',
-  'working:normal':     'elf--working-normal',
-  'sleeping:normal':    'elf--sleeping-normal',
-  'drinking:normal':    'elf--drinking-normal',
+  'idle:normal':        'uda--idle-normal',
+  'idle:sleepy':        'uda--idle-sleepy',
+  'idle:sad':           'uda--idle-sad',
+  'idle:sleepy+sad':    'uda--idle-sleepy-sad',
+  'working:normal':     'uda--working-normal',
+  'sleeping:normal':    'uda--sleeping-normal',
+  'drinking:normal':    'uda--drinking-normal',
 };
 
-function updateSprite(state) {
+export function updateUda(state) {
   const passiveKey = [
     state.passive.sleepy ? 'sleepy' : '',
     state.passive.sad    ? 'sad'    : '',
   ].filter(Boolean).join('+') || 'normal';
   
   const key = `${state.active}:${passiveKey}`;
-  const elfEl = document.getElementById('elf-sprite');
+  const udaEl = document.getElementById('uda-sprite');
   
-  elfEl.className = elfEl.className
+  udaEl.className = udaEl.className
     .split(' ')
-    .filter(c => !c.startsWith('elf--'))
+    .filter(c => !c.startsWith('uda--'))
     .join(' ');
-  elfEl.classList.add(SPRITE_MAP[key] ?? 'elf--idle-normal');
+  udaEl.classList.add(SPRITE_MAP[key] ?? 'uda--idle-normal');
 }
 
 export function eventLogger(message) {

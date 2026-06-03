@@ -1,10 +1,15 @@
 import {udaLife} from './rules.js';
 import {state} from './state.js';
+import {updateBars, updateBarColors, updateUda} from './ui.js';
+import {events} from './events.js';
+
+events();
+requestAnimationFrame(loop);
 
 function render() {
   updateBars(state);
   updateBarColors(state);
-  updateSprite(state);
+  updateUda(state);
 }
 
 
