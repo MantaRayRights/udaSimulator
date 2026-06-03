@@ -35,10 +35,11 @@ export function udaLife(state, dt) {
     eventLogger("Uda died");}
 
   const rates = DECAY[state.active];
-  state.hp     = clamp(state.hp     + rates.hp     * dt, 0, 100);
-  state.sleep  = clamp(state.sleep  + rates.sleep  * dt, 0, 100);
+  console.log('active:', state.active, 'rates:', rates);
+  state.hp = clamp(state.hp + rates.hp * dt, 0, 100);
+  state.sleep = clamp(state.sleep + rates.sleep * dt, 0, 100);
   state.mood = clamp(state.mood + rates.mood * dt, 0, 100);
-  state.money  = clamp(state.money  + rates.money  * dt, 0, 999);
+  state.money = clamp(state.money + rates.money * dt, 0, 999);
   
 }
 
