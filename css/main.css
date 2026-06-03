@@ -31,8 +31,15 @@ body {
     "bars"
     "log";
   height: 100vh;
-  gap: var(--panel-gap);
-  padding: var(--panel-padding);
+}
+
+/* Switch the layout if the screen is wide enough */
+@media (min-width: 768px) {
+  #game {
+    grid-template-rows: none;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas: "room bars log";
+  }
 }
 
 #panel-room {

@@ -1,0 +1,26 @@
+/* the grey background track */
+.bar-track {
+  width: 100%;
+  height: var(--bar-height);
+  background: #333;
+  border-radius: 4px;
+  overflow: hidden; /* keeps the fill from spilling outside the track */
+}
+
+/* the coloured fill */
+.bar {
+  height: 100%;
+  width: 100%; /* js will override this to reflect the actual value */
+  border-radius: 4px;
+  transition: width 0.3s ease; /* smooth shrinking animation */
+}
+
+/* default colours per bar */
+#bar-hp     { background: #6aa750; } 
+#bar-money  { background: #f1c40f; } 
+#bar-sleep  { background: #aa4ada; } 
+#bar-mood { background: #68b5e5; } 
+
+document.getElementById('bar-hp').style.width = state.hp + '%';
+
+#bar-hp.bar--warning { background: #e74c3c; }
