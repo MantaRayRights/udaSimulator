@@ -10,7 +10,6 @@
 /* the coloured fill */
 .bar {
   height: 100%;
-  width: 100%; /* js will override this to reflect the actual value */
   border-radius: 4px;
   transition: width 0.3s ease; /* smooth shrinking animation */
 }
