@@ -3,15 +3,13 @@ import {state} from './state.js';
 import {updateBars, updateBarColors, updateUda} from './ui.js';
 import {events} from './events.js';
 
-events();
+let lastTime = null;
 
 function render() {
   updateBars(state);
   updateBarColors(state);
   updateUda(state);
 }
-
-let lastTime = null;
 
 function loop(timestamp) {
   const dt = lastTime ? timestamp - lastTime : 0;
@@ -22,4 +20,5 @@ function loop(timestamp) {
   requestAnimationFrame(loop);
 }
 
+events();
 requestAnimationFrame(loop);

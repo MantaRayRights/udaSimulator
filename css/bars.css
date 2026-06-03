@@ -15,12 +15,10 @@
   transition: width 0.3s ease; /* smooth shrinking animation */
 }
 
-/* default colours per bar */
+/* default colours */
 #bar-hp     { background: #6aa750; } 
 #bar-money  { background: #f1c40f; } 
 #bar-sleep  { background: #aa4ada; } 
 #bar-mood { background: #68b5e5; } 
-
-document.getElementById('bar-hp').style.width = state.hp + '%';
 
 #bar-hp.bar--warning { background: #e74c3c; }

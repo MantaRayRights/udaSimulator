@@ -1,6 +1,6 @@
-import { state } from './state.js';
-import { derivePassive } from './state.js';
-import { timeEvolution } from './rules.js';
+import {state} from './state.js';
+import {derivePassive} from './state.js';
+import {udaLife} from './rules.js';
 
 // Listen to the browser events and update the state accordingly.
 // I don't know how to connect the buttons yet! Just put them there first
