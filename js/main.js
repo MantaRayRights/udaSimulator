@@ -18,7 +18,7 @@ function loop(timestamp) {
   lastTime = timestamp;
   
   udaLife(state,dt);
-  console.log(state.hp, state.sleep, state.mental, state.money);
+  //console.log(state.hp, state.sleep, state.mental, state.money);
   render();
   requestAnimationFrame(loop);
 }
