@@ -3,7 +3,7 @@ import { derivePassive } from './state.js';
 import { timeEvolution } from './rules.js';
 
 // Listen to the browser events and update the state accordingly.
-// I don't know how to connectthe buttons yet! Just put them there first
+// I don't know how to connect the buttons yet! Just put them there first
 document.getElementById('workButton').addEventListener('click', () => {
   state.active = 'working';
 });
@@ -18,8 +18,6 @@ document.getElementById('sleepButton').addEventListener('click', () => {
 });
 
 document.getElementById('drinkButton').addEventListener('click', () => {
-  if (state.active === 'dead') return;
   if (state.money <= 0) return;
-  
   state.active = 'drinking';
 });
