@@ -1,7 +1,5 @@
-import {events} from './events.js';
 import {eventLogger} from './ui.js';
-import {state} from './state.js';
-import {derivePassive} from './state.js';
+import {state, derivePassive} from './state.js';
 
 const DECAY = {
   'idle':     { hp: -0.005, sleep: -0.001, mood: -0.001, money: -0.001 },
