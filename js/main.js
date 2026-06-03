@@ -1,5 +1,6 @@
 import {udaLife} from './rules.js';
 import {state} from './state.js';
+import {derivePassive} from './state.js';
 import {updateBars, updateBarColors, updateUda} from './ui.js';
 import {events} from './events.js';
 
