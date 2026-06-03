@@ -4,11 +4,11 @@ import {state} from './state.js';
 import {derivePassive} from './state.js';
 
 const DECAY = {
-  idle:     { hp: -0.005, sleep: -0.001, mental: -0.001, money: -0.001 },
-  working:  { hp: -0.01, sleep: -0.001, mental: -0.001, money: 0.03 },
-  sleeping: { hp: -0.003, sleep: 0.05, mental: 0, money: -0.001 },
-  drinking: { hp: -0.02, sleep: -0.01, mental: 0.03, money: -0.003 },
-  dead:     { hp: 0, sleep: 0, mental: 0, money: 0 }
+  'idle':     { hp: -0.005, sleep: -0.001, mental: -0.001, money: -0.001 },
+  'working':  { hp: -0.01, sleep: -0.001, mental: -0.001, money: 0.03 },
+  'sleeping': { hp: -0.003, sleep: 0.05, mental: 0, money: -0.001 },
+  'drinking': { hp: -0.02, sleep: -0.01, mental: 0.03, money: -0.003 },
+  'dead':     { hp: 0, sleep: 0, mental: 0, money: 0 }
 };
 
 export function udaLife(state, dt) {
