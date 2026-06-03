@@ -3,6 +3,7 @@ import {state} from './state.js';
 import {updateBars, updateBarColors, updateUda} from './ui.js';
 import {events} from './events.js';
 
+
 let lastTime = null;
 
 function render() {
@@ -16,6 +17,7 @@ function loop(timestamp) {
   lastTime = timestamp;
   
   udaLife(state,dt);
+  console.log(state.hp, state.sleep, state.mental, state.money);
   render();
   requestAnimationFrame(loop);
 }
