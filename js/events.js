@@ -48,6 +48,7 @@ export function events(){
     state.active = 'drinking';
     });
 
+    /*
     // Add idleButton everywhere else!
     document.getElementById('idleButton').addEventListener('click', () => {
     if (state.mood <= 30) {
@@ -59,3 +60,4 @@ export function events(){
     }
     });
 }
+    */
