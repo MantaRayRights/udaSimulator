@@ -10,7 +10,7 @@ let lastTime = null;
 function render() {
   updateBars(state);
   updateBarColors(state);
-  updateUda(state);
+  //updateUda(state);
 }
 
 // requestAnimationFrame calls loop at the refresh rate of the browser
