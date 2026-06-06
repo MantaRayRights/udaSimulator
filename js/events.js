@@ -23,7 +23,7 @@ export function events(){
     if (state.money <= 0) return;
     eventLogger("Uda couldn't afford to eat.");
 
-    if (state,money <= 10) {
+    if (state.money <= 10) {
         //add popup "no money for the next meal..."
     }
 
@@ -46,7 +46,7 @@ export function events(){
     }
 
     state.active = 'drinking';
-    })
+    });
 
     // Add idleButton everywhere else!
     document.getElementById('idleButton').addEventListener('click', () => {
@@ -57,4 +57,5 @@ export function events(){
     } else {
         eventLogger("Uda wants to be happy.")
     }
-    };
+    });
+}
