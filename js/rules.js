@@ -34,7 +34,11 @@ export function udaLife(state, dt) {
   let udaEfficiency = 0;
     if (state.active === 'working') {
       if (state.passive.sleepy) udaEfficiency -= 0.01;
-      if (state.passive.sad)    udaEfficiency -= 0.01;
+      if (state.passive.sad) udaEfficiency -= 0.01;
+  }
+
+  function clamp(val, min, max) {
+  return Math.max(min, Math.min(max, val));
   }
 
   const rates = DECAY[state.active];
@@ -44,8 +48,4 @@ export function udaLife(state, dt) {
   state.mood = clamp(state.mood + rates.mood * dt, 0, 100);
   state.money = clamp(state.money + (rates.money + udaEfficiency) * dt, 0, 999);
   
-}
-
-function clamp(val, min, max) {
-  return Math.max(min, Math.min(max, val));
 }

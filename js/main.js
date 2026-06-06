@@ -13,6 +13,7 @@ function render() {
   updateUda(state);
 }
 
+// requestAnimationFrame calls loop at the refresh rate of the browser
 function loop(timestamp) {
   const dt = lastTime ? timestamp - lastTime : 0;
   lastTime = timestamp;
