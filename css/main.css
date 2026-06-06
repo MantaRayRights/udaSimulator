@@ -1,8 +1,8 @@
 :root {
-  --color-bg: #7a474f;
-  --color-panel: #dfd6bb;
-  --color-border: #0f3460;
-  --color-text: #2f0e0e;
+  --color-bg: #000000;
+  --color-panel: #ffffff;
+  --color-border: #000000;
+  --color-text: #312f2f;
 
   --bar-height: 18px;
   --panel-padding: 16px;
