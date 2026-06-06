@@ -58,16 +58,6 @@ body {
   object-fit: cover;
 }
 
-.room-button {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: painted; /* only non-transparent pixels respond */
-  cursor: pointer;
-}
-
 #panel-bars {
   grid-area: bars;
   display: flex;
@@ -98,31 +88,42 @@ body {
 /* Clickable furnitures */
 #workButton {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 80px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: painted; /* only non-transparent pixels respond */
+  cursor: pointer;
 }
 
 #eatButton {
   position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: painted; /* only non-transparent pixels respond */
+  cursor: pointer;
 }
 
 #sleepButton {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 80px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: painted; /* only non-transparent pixels respond */
+  cursor: pointer;
 }
 
 #drinkButton {
   position: absolute;
-  bottom: 120px;
-  left: 20px;
-  width: 80px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: painted; /* only non-transparent pixels respond */
+  cursor: pointer;
 }
 
 #event-log p {
